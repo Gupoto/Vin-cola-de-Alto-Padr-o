@@ -1,0 +1,373 @@
+/* ========================= */
+/* CONFIGURAÇÃO GLOBAL DO SITE */
+/* ========================= */
+
+/* O asterisco * significa "todos os elementos da página" */
+*{
+  margin:0;          /* Remove qualquer espaço em volta dos elementos */
+  padding:0;         /* Remove qualquer preenchimento interno */
+  box-sizing:border-box; /* Faz com que o tamanho de largura e altura inclua bordas e padding */
+}
+
+/* ========================= */
+/* ESTILO GERAL DA PÁGINA */
+/* ========================= */
+body{
+  font-family:'Poppins',sans-serif; /* Define a fonte do texto da página */
+  text-align:center;                /* Centraliza todo o texto por padrão */
+  background:#570303;               /* Cor de fundo vinho escuro */
+}
+
+/* ========================= */
+/* FONTES DOS TÍTULOS */
+/* ========================= */
+h1,h2,h3{
+  font-family:'Playfair Display',serif; /* Fonte especial para títulos */
+}
+
+/* ========================= */
+/* ROLAGEM SUAVE DA PÁGINA */
+/* ========================= */
+html{
+  scroll-behavior: smooth; /* Faz a rolagem da página suave quando clicamos em links internos */
+}
+
+/* ========================= */
+/* BANNER PRINCIPAL */
+/* ========================= */
+.banner{
+  height:80vh; /* Altura do banner: 80% da altura da tela */
+  /* Fundo com imagem + camada escura para melhorar contraste do texto */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("imagens/VallontanoLogo.png");
+  background-size:cover;       /* Faz a imagem cobrir todo o espaço do banner */
+  background-position:center;   /* Centraliza a imagem no banner */
+  display:flex;                 /* Usa Flexbox para organizar elementos dentro do banner */
+  justify-content:center;       /* Centraliza horizontalmente */
+  align-items:center;           /* Centraliza verticalmente */
+}
+
+/* ========================= */
+/* CAIXA DE TEXTO DO BANNER */
+/* ========================= */
+.banner-conteudo{
+  color:white;                          /* Cor do texto branco */
+  background:rgba(0,0,0,0.4);          /* Fundo semitransparente preto */
+  padding:40px;                         /* Espaço interno */
+  border-radius:10px;                   /* Bordas arredondadas */
+  max-width:700px;                       /* Largura máxima da caixa */
+}
+
+.banner-conteudo p{
+  margin-top:15px; /* Espaço acima do parágrafo */
+}
+
+/* ========================= */
+/* BOTÃO PRINCIPAL */
+/* ========================= */
+.botao{
+  display:inline-block;       /* Permite usar margem e padding como bloco */
+  margin-top:25px;            /* Espaço acima do botão */
+  padding:12px 28px;          /* Espaço interno do botão */
+  background:#7b0f19;         /* Cor de fundo vinho */
+  color:white;                /* Cor do texto */
+  text-decoration:none;       /* Remove sublinhado */
+  border-radius:5px;          /* Bordas arredondadas */
+  transition:0.3s;            /* Animação suave ao passar o mouse */
+}
+
+.botao:hover{
+  background:#a31521;         /* Cor do botão muda quando passamos o mouse */
+}
+
+/* ========================= */
+/* SEÇÃO SOBRE A VINÍCOLA */
+/* ========================= */
+.sobre{
+  padding:40px 20px;          /* Espaço interno da seção */
+  background:#e9e5e5;         /* Cor de fundo clara */
+}
+
+.sobre p{
+  max-width:700px;            /* Largura máxima do parágrafo */
+  margin:20px auto;           /* Espaço acima e abaixo + centraliza horizontalmente */
+}
+
+/* ========================= */
+/* SEÇÃO DIFERENCIAIS */
+/* ========================= */
+.diferenciais{
+  padding:40px 20px;
+  background:#f5f5f5;         /* Fundo mais claro que a seção sobre */
+}
+
+.diferenciais-container{
+  display:flex;               /* Organiza os itens em linha */
+  justify-content:center;     /* Centraliza horizontalmente */
+  gap:30px;                   /* Espaço entre os itens */
+  flex-wrap:wrap;             /* Faz os itens quebrarem linha se necessário */
+}
+
+.item{
+  width:220px;                /* Largura de cada diferencial */
+}
+
+/* ========================= */
+/* SEÇÃO DOS VINHOS */
+/* ========================= */
+.vinhos{
+  padding:60px 20px;          /* Espaço interno da seção */
+}
+
+/* títulos de seção de vinhos */
+.titulo-vinho{
+  color:white;                /* Cor do título */
+  margin-top:60px;            /* Espaço acima do título */
+  font-size:32px;             /* Tamanho da fonte */
+}
+
+.espumante{ color:#f5e6a7; }  /* Cor para títulos de espumante */
+.branco{ color:#ffffff; }      /* Cor para títulos de vinho branco */
+.tinto{ color:#ffb3b3; }       /* Cor para títulos de vinho tinto */
+
+/* container dos cards */
+.vinhos-container{
+  display:flex;               /* Flexbox para os cards */
+  justify-content:center;     /* Centraliza horizontalmente */
+  gap:40px;                   /* Espaço entre os cards */
+  flex-wrap:wrap;             /* Quebra para nova linha se necessário */
+  margin-top:40px;            /* Espaço acima do container */
+}
+
+/* ========================= */
+/* CARD DOS VINHOS */
+/* ========================= */
+.card {
+  background: white;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  
+  display: flex;           /* transforma o card em flex container */
+  flex-direction: column;  /* empilha título, imagem, descrição e botão verticalmente */
+  justify-content: space-between; /* garante que o botão fique sempre no fim */
+  
+  transition: 0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px); /* Levanta o card quando o mouse passa */
+}
+
+.card img{
+  width:100%;                 /* A imagem ocupa toda largura do card */
+  border-radius:8px;          /* Bordas arredondadas na imagem */
+  margin-bottom:15px;         /* Espaço abaixo da imagem */
+}
+
+.card p{
+  font-size:14px;             /* Tamanho do texto */
+  margin-bottom:15px;         /* Espaço abaixo do parágrafo */
+}
+
+/* ========================= */
+/* DESCRIÇÃO DO VINHO */
+/* ========================= */
+.descricao{
+  display:none;               /* Esconde a descrição por padrão */
+  color:#333;                 /* Cor do texto da descrição */
+}
+
+.descricao.ativa{
+  display:block;              /* Mostra a descrição quando clicamos "ver mais" */
+}
+
+/* ========================= */
+/* BOTÕES DOS CARDS */
+/* ========================= */
+button{
+  padding:10px 20px;          /* Espaço interno */
+  border:none;                 /* Remove borda padrão */
+  background:#7b0f19;          /* Cor do botão */
+  color:white;                 /* Cor do texto */
+  border-radius:5px;           /* Bordas arredondadas */
+  cursor:pointer;              /* Cursor de mãozinha */
+}
+
+button:hover{
+  background:#a31521;          /* Muda cor ao passar o mouse */
+}
+
+/* ========================= */
+/* RODAPÉ DO SITE */
+/* ========================= */
+footer{
+  background:#111;            /* Fundo escuro */
+  color:white;                /* Cor do texto */
+  text-align:center;          /* Centraliza o texto */
+  padding:40px;               /* Espaço interno */
+  font-size:14px;             /* Tamanho da fonte */
+  width:100%;                 /* Ocupa toda largura da tela */
+}
+
+footer ul{
+  list-style:none;            /* Remove marcadores da lista */
+  margin:20px 0;              /* Espaço acima e abaixo */
+}
+
+footer li{
+  margin:5px 0;               /* Espaço entre os itens da lista */
+}
+
+/* ========================= */
+/* SISTEMA DE AVALIAÇÃO */
+/* ========================= */
+.avaliacao{
+  margin-top:15px;            /* Espaço acima do bloco de avaliação */
+}
+
+.estrelas span{
+  font-size:24px;             /* Tamanho das estrelas */
+  cursor:pointer;             /* Cursor de mãozinha */
+  color:#ccc;                 /* Cor cinza das estrelas não selecionadas */
+  transition:0.3s;            /* Animação suave */
+}
+
+.estrelas span:hover{
+  color:gold;                 /* Estrela fica dourada ao passar o mouse */
+  transform:scale(1.2);       /* Aumenta a estrela levemente */
+}
+
+.media{
+  font-size:14px;             /* Tamanho do texto da média */
+  margin-top:5px;             /* Espaço acima */
+}
+
+.total{
+  font-size:12px;             /* Tamanho do texto do total de avaliações */
+  color:#666;                 /* Cor cinza mais clara */
+}
+
+/* ========================= */
+/* ESTILO DOS COMENTÁRIOS */
+/* ========================= */
+.comentarios {
+  margin-top: 15px;           /* Espaço acima da seção de comentários */
+  text-align: left;           /* Alinha o conteúdo à esquerda */
+}
+
+.comentarios input {
+  width: calc(50% - 10px);    /* Largura de metade da caixa menos espaço */
+  padding: 8px;               /* Espaço interno */
+  margin: 5px 5px 10px 0;     /* Espaço em volta do input */
+  border-radius: 5px;         /* Bordas arredondadas */
+  border: 1px solid #ccc;     /* Borda cinza clara */
+  box-sizing: border-box;     /* Inclui padding no tamanho do input */
+}
+
+.comentarios button {
+  padding: 8px 12px;          /* Espaço interno */
+  background: #7b0f19;        /* Cor do botão */
+  color: white;               /* Cor do texto */
+  border-radius: 5px;         /* Bordas arredondadas */
+  border: none;               /* Sem borda */
+  cursor: pointer;            /* Cursor de mãozinha */
+  transition: 0.3s;           /* Animação suave */
+}
+
+.comentarios button:hover {
+  background: #a31521;        /* Muda a cor quando passa o mouse */
+}
+
+.lista-comentarios {
+  max-height: 150px;           /* Altura máxima da lista */
+  overflow-y: auto;            /* Cria scroll vertical se passar da altura */
+  margin-top: 10px;            /* Espaço acima da lista */
+  padding-left: 0;             /* Remove recuo padrão */
+  list-style: none;            /* Remove marcadores */
+}
+
+.lista-comentarios li {
+  background: #f5f5f5;         /* Fundo cinza claro para cada comentário */
+  margin-bottom: 8px;          /* Espaço entre comentários */
+  padding: 8px;                /* Espaço interno */
+  border-radius: 5px;          /* Bordas arredondadas */
+  display: flex;               /* Usa flex para organizar conteúdo */
+  flex-direction: column;      /* Itens do comentário em coluna */
+}
+
+.lista-comentarios li strong {
+  color: #570303;              /* Nome do usuário em cor vinho */
+}
+
+.lista-comentarios li button {
+  align-self: flex-end;        /* Botões ficam à direita */
+  margin-top: 4px;             /* Espaço acima do botão */
+  font-size: 12px;             /* Tamanho pequeno do botão */
+  background: #7b0f19;         /* Cor do botão */
+  color: #fff;                 /* Cor do texto */
+}
+
+.lista-comentarios li button:hover {
+  background: #a31521;         /* Muda a cor ao passar o mouse */
+}
+/* ========================= */
+/* CARRINHO FIXO */
+/* ========================= */
+#carrinho {
+  position: fixed;         /* Fixa o carrinho na tela */
+  top: 20px;               /* Distância do topo */
+  right: 20px;             /* Distância da direita */
+  background: #fff;        /* Fundo branco */
+  color: #000;             /* Cor do texto */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  max-width: 250px;
+  z-index: 1000;           /* Fica acima de tudo */
+}
+
+#carrinho h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#carrinho ul {
+  list-style: none;
+  padding-left: 0;
+  max-height: 200px;       /* Limita altura */
+  overflow-y: auto;        /* Scroll se passar do limite */
+}
+
+#carrinho li {
+  display: flex;
+  justify-content: space-between; /* Nome do vinho + botão remover */
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+#carrinho button {
+  background: #7b0f19;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+#carrinho button:hover {
+  background: #a31521;
+}
+
+/* ========================= */
+/* CARD - ajuste para manter altura consistente */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Mantém conteúdo no topo */
+  min-height: 430px;           /* Altura mínima para todos os cards iguais */
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!-- Informa ao navegador que este é um documento HTML5 -->
+<html lang="pt-br">
+<!-- Define o idioma da página como português do Brasil -->
+
+<head>
+  <!-- ========================= -->
+  <!-- INFORMAÇÕES SOBRE A PÁGINA -->
+  <!-- ========================= -->
+
+  <!-- Define o conjunto de caracteres da página para UTF-8, que suporta acentos e caracteres especiais -->
+  <meta charset="UTF-8">
+
+  <!-- Faz a página se ajustar a diferentes tamanhos de tela (celular, tablet, desktop) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da página, aparece na aba do navegador -->
+  <title>Vallontano Vinhos</title>
+
+  <!-- Conecta o arquivo CSS externo que controla o visual da página -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Importa fontes externas do Google Fonts para usar nos títulos e textos -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- BANNER - PRIMEIRA SEÇÃO QUE O USUÁRIO VÊ -->
+<!-- ========================= -->
+<header class="banner">
+  <div class="banner-conteudo">
+    <!-- Título principal da página -->
+    <h1>Vinhos de excelência produzidos com tradição e autenticidade</h1>
+
+    <!-- Texto explicativo sobre a vinícola -->
+    <p>Descubra os rótulos exclusivos da Vallontano, uma vinícola boutique da Serra Gaúcha que une tradição familiar e qualidade premium.</p>
+
+    <!-- Botão que leva para a seção de vinhos -->
+    <a href="#vinhos" class="botao">Conheça nossos rótulos</a>
+  </div>
+</header>
+
+<!-- ========================= -->
+<!-- SOBRE - Seção que explica a vinícola -->
+<!-- ========================= -->
+<section class="sobre">
+  <h2>Sobre nossa Vinícola</h2>
+  <p>A Vallontano Vinhos Nobres nasceu na Serra Gaúcha com a proposta de produzir vinhos de alta qualidade em pequena escala. Inspirada nas tradições italianas e no cuidado artesanal, a vinícola busca expressar em cada garrafa a autenticidade do terroir brasileiro.</p>
+</section>
+
+<!-- ========================= -->
+<!-- DIFERENCIAIS - O que faz a vinícola ser especial -->
+<!-- ========================= -->
+<section class="diferenciais">
+  <h2>Por que escolher nossos vinhos?</h2>
+  <div class="diferenciais-container">
+    <!-- Cada item é um diferencial -->
+    <div class="item"><h3>Uvas selecionadas</h3><p>Produzidos com uvas cuidadosamente selecionadas.</p></div>
+    <div class="item"><h3>Vinhos premiados</h3><p>Reconhecimento em concursos nacionais e internacionais.</p></div>
+    <div class="item"><h3>Produção artesanal</h3><p>Processo que respeita tradição e qualidade.</p></div>
+    <div class="item"><h3>Tradição da Serra Gaúcha</h3><p>Inspirado nas vinícolas da região.</p></div>
+  </div>
+</section>
+
+<!-- ========================= -->
+<!-- VINHOS - LISTA DE VINHOS -->
+<!-- ========================= -->
+<section class="vinhos" id="vinhos">
+
+  <!-- CATEGORIA: ESPUMANTES -->
+  <h2 class="titulo-vinho espumante">Espumantes</h2>
+  <div class="vinhos-container">
+
+    <!-- CARD: Vallontano Brut -->
+    <div class="card" 
+    data-vinho="vallontano_brut">
+      <img src="imagens/Vallontano.png" alt="Espumante Vallontano Brut">
+      <h3>Vallontano Brut</h3>
+      <button class="botao-comprar" onclick="adicionarAoCarrinho(this)">Adicionar ao carrinho</button>
+      <br><br>
+      <p class="descricao">
+        Vallontano | Vale dos Vinhedos | Chardonnay e Pinot Noir. Elaborado com as mesmas uvas utilizadas em Champagne.
+      </p>
+      <button onclick="mostrarDescricao(this)">Ver mais</button>
+
+      <!-- Avaliação do vinho -->
+      <div class="avaliacao" data-vinho="vallontano_brut">
+        <div class="estrelas">
+          <span onclick="avaliar(this,1)">★</span>
+          <span onclick="avaliar(this,2)">★</span>
+          <span onclick="avaliar(this,3)">★</span>
+          <span onclick="avaliar(this,4)">★</span>
+          <span onclick="avaliar(this,5)">★</span>
+        </div>
+        <p class="media">Avaliação: <span>0</span> <span class="total">(0 avaliações)</span></p>
+      </div>
+
+      <!-- Comentários do vinho -->
+      <div class="comentarios">
+        <input type="text" placeholder="Seu nome" class="nome-usuario">
+        <input type="text" placeholder="Escreva seu comentário..." class="campo-comentario" onkeydown="if(event.key==='Enter'){adicionarComentario(this);}">
+        <button onclick="adicionarComentario(this)">Enviar</button>
+        <ul class="lista-comentarios"></ul>
+      </div>
+    </div>
+
+    <!-- CARD: Vallontano Moscatel -->
+    <div class="card" data-vinho="vallontano_moscatel">
+      <img src="imagens/Moscatel_Vallontano.png" alt="Espumante Vallontano Moscatel">
+      <h3>Vallontano Moscatel</h3>
+      <button class="botao-comprar" onclick="adicionarAoCarrinho(this)">Adicionar ao carrinho</button>
+      <br><br>
+      <p class="descricao">
+        Vallontano | Vale dos Vinhedos | Moscatel. Delicado e muito aromático, este é um espumante de muito apelo e grande tipicidade, delicadamente adocicado.
+      </p>
+      <button onclick="mostrarDescricao(this)">Ver mais</button>
+      <div class="avaliacao" data-vinho="vallontano_moscatel">
+        <div class="estrelas">
+          <span onclick="avaliar(this,1)">★</span>
+          <span onclick="avaliar(this,2)">★</span>
+          <span onclick="avaliar(this,3)">★</span>
+          <span onclick="avaliar(this,4)">★</span>
+          <span onclick="avaliar(this,5)">★</span>
+        </div>
+        <p class="media">Avaliação: <span>0</span> <span class="total">(0 avaliações)</span></p>
+      </div>
+      <div class="comentarios">
+        <input type="text" placeholder="Seu nome" class="nome-usuario">
+        <input type="text" placeholder="Escreva seu comentário..." class="campo-comentario" onkeydown="if(event.key==='Enter'){adicionarComentario(this);}">
+        <button onclick="adicionarComentario(this)">Enviar</button>
+        <ul class="lista-comentarios"></ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CATEGORIA: BRANCOS -->
+  <h2 class="titulo-vinho branco">Brancos</h2>
+  <div class="vinhos-container">
+
+    <!-- CARD: Alamos Chardonnay -->
+    <div class="card" data-vinho="alamos_chardonnay">
+      <img src="imagens/ALAMOS CHARDONNAY.png" alt="Alamos Chardonnay">
+      <h3>Alamos Chardonnay</h3>
+      <button class="botao-comprar" onclick="adicionarAoCarrinho(this)">Adicionar ao carrinho</button>
+      <br><br>
+      <p class="descricao">
+        Alamos | Mendoza | Chardonnay. Vinho branco elegante, com boa presença de boca, estilo fácil de gostar!
+      </p>
+      <button onclick="mostrarDescricao(this)">Ver mais</button>
+      <div class="avaliacao" data-vinho="alamos_chardonnay">
+        <div class="estrelas">
+          <span onclick="avaliar(this,1)">★</span>
+          <span onclick="avaliar(this,2)">★</span>
+          <span onclick="avaliar(this,3)">★</span>
+          <span onclick="avaliar(this,4)">★</span>
+          <span onclick="avaliar(this,5)">★</span>
+        </div>
+        <p class="media">Avaliação: <span>0</span> <span class="total">(0 avaliações)</span></p>
+      </div>
+      <div class="comentarios">
+        <input type="text" placeholder="Seu nome" class="nome-usuario">
+        <input type="text" placeholder="Escreva seu comentário..." class="campo-comentario" onkeydown="if(event.key==='Enter'){adicionarComentario(this);}">
+        <button onclick="adicionarComentario(this)">Enviar</button>
+        <ul class="lista-comentarios"></ul>
+      </div>
+    </div>
+
+    <!-- CARD: Uxmal Chardonnay -->
+    <div class="card" data-vinho="uxmal_chardonnay">
+      <img src="imagens/UXMAL CHARDONNAY.png" alt="Uxmal Chardonnay">
+      <h3>Uxmal Chardonnay</h3>
+      <button class="botao-comprar" onclick="adicionarAoCarrinho(this)">Adicionar ao carrinho</button>
+      <br><br>
+      <p class="descricao">
+        Bodegas Uxmal | Mendoza | Chardonnay. Vinho elegante, com notas de frutas tropicais e toque de carvalho francês.
+      </p>
+      <button onclick="mostrarDescricao(this)">Ver mais</button>
+      <div class="avaliacao" data-vinho="uxmal_chardonnay">
+        <div class="estrelas">
+          <span onclick="avaliar(this,1)">★</span>
+          <span onclick="avaliar(this,2)">★</span>
+          <span onclick="avaliar(this,3)">★</span>
+          <span onclick="avaliar(this,4)">★</span>
+          <span onclick="avaliar(this,5)">★</span>
+        </div>
+        <p class="media">Avaliação: <span>0</span> <span class="total">(0 avaliações)</span></p>
+      </div>
+      <div class="comentarios">
+        <input type="text" placeholder="Seu nome" class="nome-usuario">
+        <input type="text" placeholder="Escreva seu comentário..." class="campo-comentario" onkeydown="if(event.key==='Enter'){adicionarComentario(this);}">
+        <button onclick="adicionarComentario(this)">Enviar</button>
+        <ul class="lista-comentarios"></ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CATEGORIA: TINTOS -->
+  <h2 class="titulo-vinho tinto">Tintos</h2>
+  <div class="vinhos-container">
+
+    <!-- CARD: Trofeo Cabernet -->
+    <div class="card" data-vinho="trofeo_cabernet">
+      <img src="imagens/Vallontano Reserva.png" alt="Trofeo Cabernet Sauvignon">
+      <h3>Trofeo Cabernet Sauvignon</h3>
+      <button class="botao-comprar" onclick="adicionarAoCarrinho(this)">Adicionar ao carrinho</button>
+      <br><br>
+      <p class="descricao">
+        Viña Del Triunfo | Valle Central | Cabernet Sauvignon. Ótimo acompanhamento para carnes vermelhas.
+      </p>
+      <button onclick="mostrarDescricao(this)">Ver mais</button>
+      <div class="avaliacao" data-vinho="trofeo_cabernet">
+        <div class="estrelas">
+          <span onclick="avaliar(this,1)">★</span>
+          <span onclick="avaliar(this,2)">★</span>
+          <span onclick="avaliar(this,3)">★</span>
+          <span onclick="avaliar(this,4)">★</span>
+          <span onclick="avaliar(this,5)">★</span>
+        </div>
+        <p class="media">Avaliação: <span>0</span> <span class="total">(0 avaliações)</span></p>
+      </div>
+      <div class="comentarios">
+        <input type="text" placeholder="Seu nome" class="nome-usuario">
+        <input type="text" placeholder="Escreva seu comentário..." class="campo-comentario" onkeydown="if(event.key==='Enter'){adicionarComentario(this);}">
+        <button onclick="adicionarComentario(this)">Enviar</button>
+        <ul class="lista-comentarios"></ul>
+      </div>
+    </div>
+
+    <!-- CARD: Indra 2018 -->
+    <div class="card" data-vinho="indra_2018">
+      <img src="imagens/Indra 2018.png" alt="Indra 2018">
+      <h3>Indra 2018</h3>
+      <button class="botao-comprar" onclick="adicionarAoCarrinho(this)">Adicionar ao carrinho</button>
+      <br><br>
+      <p class="descricao">
+        Cabernet Sauvignon | Merlot | Marselan. Aromas expressivos, taninos e frescor característicos do Vale dos Vinhedos.
+      </p>
+      <button onclick="mostrarDescricao(this)">Ver mais</button>
+      <div class="avaliacao" data-vinho="indra_2018">
+        <div class="estrelas">
+          <span onclick="avaliar(this,1)">★</span>
+          <span onclick="avaliar(this,2)">★</span>
+          <span onclick="avaliar(this,3)">★</span>
+          <span onclick="avaliar(this,4)">★</span>
+          <span onclick="avaliar(this,5)">★</span>
+        </div>
+        <p class="media">Avaliação: <span>0</span> <span class="total">(0 avaliações)</span></p>
+      </div>
+      <div class="comentarios">
+        <input type="text" placeholder="Seu nome" class="nome-usuario">
+        <input type="text" placeholder="Escreva seu comentário..." class="campo-comentario" onkeydown="if(event.key==='Enter'){adicionarComentario(this);}">
+        <button onclick="adicionarComentario(this)">Enviar</button>
+        <ul class="lista-comentarios"></ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!-- JAVASCRIPT - FUNÇÕES DO SITE -->
+<!-- ========================= -->
+<script>
+  // Mostra ou esconde a descrição do vinho
+  function mostrarDescricao(botao){
+    const card = botao.parentElement;
+    const descricao = card.querySelector('.descricao');
+    descricao.classList.toggle("ativa");
+    botao.textContent = descricao.classList.contains("ativa") ? "Ver menos" : "Ver mais";
+  }
+
+  // Avaliar o vinho clicando nas estrelas
+  function avaliar(estrela, valor){
+    const container = estrela.closest(".avaliacao");
+    const vinho = container.dataset.vinho;
+    let dados = JSON.parse(localStorage.getItem(vinho)) || {total:0, soma:0};
+    dados.total++;
+    dados.soma += valor;
+    localStorage.setItem(vinho, JSON.stringify(dados));
+    mostrarMedia(container, vinho);
+  }
+
+  // Mostrar a média e total de avaliações
+  function mostrarMedia(container, vinho){
+    let dados = JSON.parse(localStorage.getItem(vinho));
+    if(!dados) return;
+    let media = (dados.soma/dados.total).toFixed(1);
+    container.querySelector(".media span").textContent = media;
+    container.querySelector(".total").textContent = `(${dados.total} avaliações)`;
+  }
+
+  // Inicializa médias de avaliação
+  document.querySelectorAll(".avaliacao").forEach(av=>{
+    mostrarMedia(av, av.dataset.vinho);
+  });
+
+  // Adicionar comentário
+  function adicionarComentario(botao){
+    const card = botao.closest(".card");
+    const vinho = card.dataset.vinho;
+    const nome = card.querySelector(".nome-usuario").value.trim();
+    const texto = card.querySelector(".campo-comentario").value.trim();
+    if(nome==="" || texto==="") return;
+    let comentarios = JSON.parse(localStorage.getItem(vinho+"_comentarios")) || [];
+    comentarios.push({nome, texto, likes:0});
+    localStorage.setItem(vinho+"_comentarios", JSON.stringify(comentarios));
+    mostrarComentarios(card, vinho);
+    card.querySelector(".nome-usuario").value = "";
+    card.querySelector(".campo-comentario").value = "";
+  }
+
+  // Mostrar comentários
+  function mostrarComentarios(card, vinho){
+    const lista = card.querySelector(".lista-comentarios");
+    let comentarios = JSON.parse(localStorage.getItem(vinho+"_comentarios")) || [];
+    lista.innerHTML = "";
+    comentarios.forEach((c,i)=>{
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${c.nome}</strong>: ${c.texto}<br>
+        <button onclick="curtirComentario('${vinho}',${i})">❤️ ${c.likes}</button>
+        <button onclick="excluirComentario('${vinho}',${i})">🗑</button>`;
+      lista.appendChild(li);
+    });
+  }
+
+  // Curtir comentário
+  function curtirComentario(vinho,index){
+    let comentarios = JSON.parse(localStorage.getItem(vinho+"_comentarios"));
+    comentarios[index].likes++;
+    localStorage.setItem(vinho+"_comentarios", JSON.stringify(comentarios));
+    document.querySelectorAll(`.card[data-vinho='${vinho}']`).forEach(card=>{
+      mostrarComentarios(card, vinho);
+    });
+  }
+
+  // Excluir comentário
+  function excluirComentario(vinho,index){
+    let comentarios = JSON.parse(localStorage.getItem(vinho+"_comentarios"));
+    comentarios.splice(index,1);
+    localStorage.setItem(vinho+"_comentarios", JSON.stringify(comentarios));
+    document.querySelectorAll(`.card[data-vinho='${vinho}']`).forEach(card=>{
+      mostrarComentarios(card, vinho);
+    });
+  }
+
+  // Inicializa comentários
+  document.querySelectorAll(".card").forEach(card=>{
+    mostrarComentarios(card, card.dataset.vinho);
+  });
+
+// Carrinho de compras
+function adicionarAoCarrinho(botao){
+  const card = botao.closest(".card");
+  const vinho = card.dataset.vinho;
+  const nome = card.querySelector("h3").textContent;
+
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  carrinho.push({vinho, nome});
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  atualizarCarrinho();
+}
+
+function removerDoCarrinho(index){
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  carrinho.splice(index, 1);
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho(){
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  const ul = document.getElementById("itens-carrinho");
+  ul.innerHTML = "";
+  carrinho.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `${item.nome} <button onclick="removerDoCarrinho(${index})">❌</button>`;
+    ul.appendChild(li);
+  });
+}
+
+// Finalizar compra (apenas alerta por enquanto)
+function finalizarCompra(){
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  if(carrinho.length === 0){
+    alert("O carrinho está vazio!");
+    return;
+  }
+  alert("Compra finalizada!\nItens:\n" + carrinho.map(i=>i.nome).join("\n"));
+  localStorage.removeItem("carrinho");
+  atualizarCarrinho();
+}
+
+// Inicializa carrinho ao carregar a página
+atualizarCarrinho();
+</script>
+
+<!-- SUAS SEÇÕES DE VINHOS E CARDS AQUI -->
+
+<!-- Carrinho fixo -->
+<div id="carrinho">
+  <h3>Carrinho</h3>
+  <ul id="itens-carrinho"></ul>
+  <button onclick="finalizarCompra()">Finalizar Compra</button>
+</div>
+
+<script>
+  // Aqui vai o script que você colou (adicionarAoCarrinho, removerDoCarrinho, etc.)
+</script>
+
+<!-- ========================= -->
+<!-- RODAPÉ -->
+<!-- ========================= -->
+<footer>
+  <h3>Vallontano Vinhos Nobres</h3>
+  <ul>
+    <li>Serra Gaúcha - RS</li>
+    <li>contato@vallontano.com</li>
+    <li>Instagram: @vallontano</li>
+    <li>Facebook: Vallontano Vinhos Nobres</li>
+  </ul>
+  <p>Projeto demonstrativo desenvolvido para fins de apresentação.</p>
+  <p>Desenvolvido por: Gustavo de Lima Alves</p>
+</footer>
+
+</body>
+</html>
